@@ -1,1 +1,2 @@
 recursive-include    ckanext/datesearch/templates  *
+recursive-include    ckanext/datesearch/assets  *.html *.json *.js *.less *.css *.mo *.yml
