@@ -4,7 +4,7 @@ this.ckan.module('daterangepicker-module', function($, _) {
 
             // Add hidden <input> tags #ext_startdate and #ext_enddate,
             // if they don't already exist.
-            var form = $("#dataset-search");
+            var form = $("#dataset-search-form");
             if ($("#ext_startdate").length === 0) {
                 $('<input type="hidden" id="ext_startdate" name="ext_startdate" />').appendTo(form);
             }
@@ -46,7 +46,7 @@ this.ckan.module('daterangepicker-module', function($, _) {
                 $('#ext_enddate').val(end);
 
                 // Submit the <form id="dataset-search">.
-                $("#dataset-search").submit();
+                $("#dataset-search-form").submit();
             });
         }
     }

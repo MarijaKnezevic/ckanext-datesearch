@@ -1,0 +1,9 @@
+daterangepicker-bs3:
+  contents:
+    - css/daterangepicker-bs3.css
+
+daterangepicker-module:
+  contents:
+    - js/moment.js
+    - js/daterangepicker.js
+    - js/daterangepicker-module.js

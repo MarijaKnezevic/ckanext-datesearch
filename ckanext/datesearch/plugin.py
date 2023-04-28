@@ -8,7 +8,7 @@ class DateSearchPlugin(plugins.SingletonPlugin):
 
     def update_config(self, config):
         toolkit.add_template_directory(config, 'templates')
-        toolkit.add_resource('assets', 'ckanext-datesearch')
+        toolkit.add_resource('assets', 'datesearch')
 
     def before_search(self, search_params):
         extras = search_params.get('extras')
@@ -24,7 +24,6 @@ class DateSearchPlugin(plugins.SingletonPlugin):
         # Add a date-range query with the selected start and end dates into the
         # Solr facet queries.
         fq = search_params['fq']
-        fq = '{fq} +metadata_modified:[{start_date} TO {end_date}]'.format(
-            fq=fq, start_date=start_date, end_date=end_date)
+        fq = f'{fq} (begin_collection_date:[* TO {end_date}] -end_collection_date:[* TO *]) OR (-begin_collection_date:[* TO *] end_collection_date:[{start_date} TO *]) OR (begin_collection_date:[* TO {end_date}] end_collection_date:[{start_date} TO *])'
         search_params['fq'] = fq
         return search_params
