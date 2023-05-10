@@ -29,4 +29,11 @@ setup(
 	# myplugin=ckanext.datesearch:PluginClass
     datesearch=ckanext.datesearch.plugin:DateSearchPlugin
 	""",
+    message_extractors={
+        'ckanext': [
+            ('**.py', 'python', None),
+            ('**.js', 'javascript', None),
+            ('**/templates/**.html', 'ckan', None),
+        ],
+	}
 )

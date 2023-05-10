@@ -1,0 +1,75 @@
+# German translations for ckanext-datesearch.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the ckanext-datesearch
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-datesearch 0.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-05-08 19:26+0200\n"
+"PO-Revision-Date: 2023-05-08 19:35+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ckanext/datesearch/assets/js/daterangepicker-module.js:16
+msgid "Today"
+msgstr "Heute"
+
+#: ckanext/datesearch/assets/js/daterangepicker-module.js:17
+msgid "Yesterday"
+msgstr "Gestern"
+
+#: ckanext/datesearch/assets/js/daterangepicker-module.js:18
+msgid "Last 7 Days"
+msgstr "Letzte 7 Tage"
+
+#: ckanext/datesearch/assets/js/daterangepicker-module.js:19
+msgid "Last 30 Days"
+msgstr "Letzte 30 Tage"
+
+#: ckanext/datesearch/assets/js/daterangepicker-module.js:20
+msgid "This Month"
+msgstr "In diesem Monat"
+
+#: ckanext/datesearch/assets/js/daterangepicker-module.js:21
+msgid "Last Month"
+msgstr "Im letzten Monat"
+
+#: ckanext/datesearch/assets/js/daterangepicker.js:43
+msgid "Custom Range"
+msgstr "Zeitraum festlegen"
+
+#: ckanext/datesearch/templates/package/search.html:8
+msgid "Filter by date"
+msgstr "Zeitlicher Filter"
+
+#: ckanext/datesearch/templates/package/search.html:10
+msgid "Clear"
+msgstr "Löschen"
+
+#: ckanext/spatial/templates/spatial/snippets/spatial_query.html:18
+msgid "Filter by location"
+msgstr "Räumlicher filter"
+
+#: ckanext/spatial/public/js/spatial_query.js:92
+msgid "Please draw query extent in the map:"
+msgstr "Bitte zeichnen Sie den Abfragebereich in die Karte ein:"
+
+#: ckanext/spatial/public/js/spatial_query.js:93
+msgid "Apply"
+msgstr "Los"
+
+#: ckanext/spatial/templates/spatial/snippets/dataset_map.html:17
+#: ckanext/spatial/templates/spatial/snippets/dataset_map_sidebar.html:17
+msgid "Dataset extent"
+msgstr "Räumliche Ausdehnung"
+
+
