@@ -40,7 +40,7 @@
       fromLabel: "From",
       toLabel: "To",
       weekLabel: "W",
-      customRangeLabel: "Custom Range",
+      customRangeLabel: ckan.i18n._("Custom Range"),
       daysOfWeek: moment()._lang._weekdaysMin.slice(),
       monthNames: moment()._lang._monthsShort.slice(),
       firstDay: 0,
