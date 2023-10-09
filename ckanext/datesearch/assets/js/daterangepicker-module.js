@@ -1,7 +1,7 @@
 this.ckan.module('daterangepicker-module', function($, _) {
     return {
-        initialize: function() {
-
+        initialize: function(e) {
+            $.proxyAll(this, /_on/);
             // Add hidden <input> tags #ext_startdate and #ext_enddate,
             // if they don't already exist.
             var form = $("#dataset-search-form");
@@ -12,35 +12,28 @@ this.ckan.module('daterangepicker-module', function($, _) {
                 $('<input type="hidden" id="ext_enddate" name="ext_enddate" />').appendTo(form);
             }
 
-            const filterBy = {
-                'today': this._('Today'),
-                'yesterday': this._('Yesterday'),
-                'last7': this._('Last 7 Days'),
-                'last30': this._('Last 30 Days'),
-                'thisMonth': this._('This Month'),
-                'lastMonth': this._('Last Month')
-              };
+            let url = new URL(window.location.href)
+            let startDate = url.searchParams.get("ext_startdate") || null;
+            let endDate = url.searchParams.get("ext_enddate") || null;
 
-            // Add a date-range picker widget to the <input> with id #daterange
-            $('input[id="daterange"]').daterangepicker({
+            // Define the options object
+            var options = {
                 ranges: {
-                   [filterBy.today]: [moment().startOf('day'), moment().endOf('day')],
-                   [filterBy.yesterday]: [moment().subtract('days', 1), moment().subtract('days', 1)],
-                   [filterBy.last7]: [moment().subtract('days', 6), moment()],
-                   [filterBy.last30]: [moment().subtract('days', 29), moment()],
-                   [filterBy.thisMonth]: [moment().startOf('month'), moment().endOf('month')],
-                   [filterBy.lastMonth]: [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
+                    'Today': [moment().startOf('day'), moment().endOf('day')],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
                 },
-                startDate: moment().subtract('days', 29),
-                endDate: moment(),
+                startDate: startDate === null ? moment().subtract(29, 'days'): moment(startDate),
+                endDate: endDate === null ? moment() : moment(endDate),
                 showDropdowns: true,
                 timePicker: true
-            },
-            function(start, end) {
+            };
 
-                // Bootstrap-daterangepicker calls this function after the user
-                // picks a start and end date.
-
+            // Initialize the daterangepicker
+            $('input[id="daterange"]').daterangepicker(options, function(start, end) {
                 // Format the start and end dates into strings in a date format
                 // that Solr understands.
                 start = start.format('YYYY-MM-DDTHH:mm:ss') + 'Z';
