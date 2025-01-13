@@ -71,3 +71,11 @@ msgstr "Los"
 msgid "Dataset extent"
 msgstr "Räumliche Ausdehnung"
 
+#: ckanext/theme_sddi/plugin.py:92
+msgid "Main Categories"
+msgstr "Hauptkategorien"
+
+#: ckanext/theme_sddi/plugin.py:93
+msgid "Topics"
+msgstr "Themen"
+
